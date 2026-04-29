@@ -45,6 +45,18 @@ android {
 
     defaultConfig {
         minSdk = 21
+        externalNativeBuild {
+            cmake {
+                arguments "-DANDROID_STL=c++_shared"
+                targets "mmap2"
+            }
+        }
+    }
+
+    externalNativeBuild {
+        cmake {
+            path = "../../deps/mio_wrapper/CMakeLists.txt"
+        }
     }
 
     dependencies {
