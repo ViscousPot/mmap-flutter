@@ -113,6 +113,7 @@ if(IS_ANDROID)
     )
     
     target_link_options(${PROJECT_NAME} PRIVATE
+        -Wl,-z,max-page-size=16384
         $<$<CONFIG:Release>:-Wl,--gc-sections -Wl,--strip-all>
     )
     
